@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 // import Home from './views/Home.vue'
-// import Index from './views/Index'
+ import Index from './views/index'
 // import Details from './views/Details'
 // import Products from './views/Products'
 // import Login from './views/Login'
@@ -13,13 +13,13 @@ Vue.use(Router)
 export default new Router({
   mode: 'history',
   base: process.env.BASE_URL,
-  // routes: [
+  routes: [
   //   { path: '/', component: Home, children:[
-  //       { path:"", component: Index },
+         { path:"/", component: Index }
   //       { path:"details", component: Details },
   //       { path:"products", component: Products },
   //   ]},
   //   { path: '/login', component: Login },
   //   { path: '/*', component:NotFound }
-  // ]
+   ]
 })

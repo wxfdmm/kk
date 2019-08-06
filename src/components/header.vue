@@ -1,39 +1,39 @@
 <template>
     <div>
         <div class="header_bg" id="header_bg">
-	<div id="header" class="header">
-		<div class="logo">
-			<a href="javaScript:;">酷狗音乐</a>
-		</div>
-		<ul class="first_nav">
-			<li class="active">发现音乐</li>
-			<li>我的音乐</li>
-			<li>朋友</li>
-			<li>商城</li>
-			<li>音乐人</li>
-			<li>下载客户端</li>
-		</ul>
-		<div class="search">
-			<div>
-				<input type="text" placeholder="音乐/电台/用户">
-			</div>
+			<div id="header" class="header">
+				<div class="logo">
+					<a href="javaScript:;">酷狗音乐</a>
+				</div>
+				<ul class="first_nav">
+					<li class="active">发现音乐</li>
+					<li>我的音乐</li>
+					<li>朋友</li>
+					<li>商城</li>
+					<li>音乐人</li>
+					<li>下载客户端</li>
+				</ul>
+			<div class="search">
+				<div>
+					<input type="text" placeholder="音乐/电台/用户">
+				</div>
 			
-		</div>
-		<div class="videoUp">
-			<div>
-				<a href="javascript:;">视频投稿</a>
 			</div>
-		</div>
-		<div class="login">
-			<a href="#" data-action='login'>登录</a>
-			<i class="arr"></i>
-			<ul>
-				<li><i class='mb_icon'></i><a href="javascript:;">手机号登录</a></li>
-				<li><i class="wx_icon"></i><a href="javascript:;">微信登录</a></li>
-				<li><i class="qq_icon"></i><a href="javascript:;">QQ登录</a></li>
-				<li><i class="wb_icon"></i><a href="javascript:;">新浪微博登录</a></li>
-				<li><i class="wy_icon"></i><a href="javascript:;">网易邮箱账号登录</a></li>
-			        </ul>
+			<div class="videoUp">
+				<div>
+					<a href="javascript:;">视频投稿</a>
+				</div>
+			</div>
+			<div class="login">
+				<a href="#" data-action='login'>登录</a>
+				<i class="arr"></i>
+				<ul>
+					<li><i class='mb_icon'></i><a 	href="javascript:;">手机号登录</a></li>
+					<li><i class="wx_icon"></i><a 	href="javascript:;">微信登录</a></li>
+					<li><i class="qq_icon"></i><a 	href="javascript:;">QQ登录</a></li>
+					<li><i class="wb_icon"></i><a 	href="javascript:;">新浪微博登录</a></li>
+					<li><i class="wy_icon"></i><a 	href="javascript:;">网易邮箱账号登录</a></li>
+			    </ul>
 		        </div>
 	        </div>
         </div>
@@ -48,7 +48,7 @@
 				<li><a href="#">新碟上架</a></li>
 			</ul>
 	        </div>
-        </div>
+		</div>
     </div>
 </template>
 <script>
