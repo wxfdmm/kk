@@ -3,7 +3,8 @@
         <div class="header_bg" id="header_bg">
 			<div id="header" class="header">
 				<div class="logo">
-					<a href="javaScript:;">酷狗音乐</a>
+					<h1>新起点音乐</h1>
+					<a href="javaScript:;">新起点音乐</a>
 				</div>
 				<ul class="first_nav">
 					<li class="active">发现音乐</li>
@@ -40,12 +41,12 @@
         <div class="nav_bg">
 	        <div id="nav" class="nav">
 			<ul>
-				<li><a href="index.html" class="navActive">推荐</a></li>
-				<li><a href="playlist.html">歌单</a></li>
-				<li><a href="#">排行榜</a></li>
-				<li><a href="#">主播电台</a></li>
-				<li><a href="#">歌手</a></li>
-				<li><a href="#">新碟上架</a></li>
+				<li><router-link to="/" class="navActive">推荐</router-link to></li>
+				<li><router-link to="/playList">歌单</router-link></li>
+				<li><router-link to="#">排行榜</router-link></li>
+				<li><router-link to="#">主播电台</router-link></li>
+				<li><router-link to="#">歌手</router-link></li>
+				<li><router-link to="#">新碟上架</router-link></li>
 			</ul>
 	        </div>
 		</div>
@@ -67,10 +68,7 @@ export default {
 	margin:0 auto;
     padding:0 -20px;
 }
-.logo, .videoUp>div, .search>div, .login{
-	background-image:url('../../public/img/header/logo.png');
-	background-repeat:no-repeat;
-}
+
 .logo{
 	width: 176px;
     height: 70px;
@@ -147,7 +145,9 @@ export default {
 	padding-left: 31px;
 	color:#ccc;
 }
-
+.logo h1{
+	color: #0083ce;
+}
 .login{
 	width: 48px;
     font-size: 0.9em;
