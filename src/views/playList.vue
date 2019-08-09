@@ -146,23 +146,23 @@
 	        cursor: pointer; 
 	        color: 20px;
 	        text-align: center;
-					border-radius:25px;
+			border-radius:25px;
 					}
 	.header>ul>li:hover {
 	        background-color: #ff9800;
 					}
 	.header>ul>li>ul {
 	        width: 100%;
-	        background: #999;
+	        background: #eee;
 					display: flex;
 					flex-wrap: wrap;
 					
 					}
 	.header>ul>li>ul>li{
 				font-size:16px;
-				border-radius:15px;
+				border-radius:25px;
 				width:90px;	
-				padding:15px 0;
+				padding:12px 0;
 	}
 	.header>ul>li>ul>li:hover{
 	        background: #0c8ed9;
