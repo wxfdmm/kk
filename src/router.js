@@ -3,7 +3,7 @@ import Router from 'vue-router'
 // import Home from './views/Home.vue'
  import Index from './views/index'
 import playList from './views/playList'
-// import Products from './views/Products'
+import song from './views/Song'
 // import Login from './views/Login'
 // import NotFound from './views/NotFound'
 //ES6
@@ -17,7 +17,7 @@ export default new Router({
   //   { path: '/', component: Home, children:[
          { path:"/", component: Index },
         { path:"/playList", component: playList },
-  //       { path:"products", component: Products },
+        { path:"/song", component: song },
   //   ]},
   //   { path: '/login', component: Login },
   //   { path: '/*', component:NotFound }
