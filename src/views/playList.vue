@@ -17,10 +17,14 @@
                 </ul>
            </div> 
            <div class="ilist">
-							<p>
-								<router-link to="">最新 </router-link>
-								<router-link to=""> 最热</router-link>
-							</p>
+			   <div class="tim">
+				  <p>
+					<router-link to="">最新 </router-link>
+					<router-link to=""> 最热</router-link>
+				  </p> 
+				  <span>{{time}} 更新</span>
+			   </div>
+							
 							 <ul>
 								 <li v-for="(im,i) of iList" :key="i">
 									 <div>
@@ -38,6 +42,7 @@
     export default{
         data() {
             return {
+				time:'',
                 ulist:[
                     {
                         name: '语种',
@@ -120,7 +125,10 @@
                 item.show = !item.show;
                 console.log(item.name)
             }
-        }
+		},
+		created() {
+            this.time=new Date().toLocaleString()
+        },
     
     }
 </script>
@@ -129,7 +137,7 @@
 	.playList{width:1200px;margin:50px auto;}
 	.header {
 					width:270px;
-	        background-color: #dacac6a9;
+	        background-color: rgba(25, 158, 235, 0.815);
 					color: #000;
 					border-radius: 20px;
 					}
@@ -219,5 +227,13 @@
 		box-shadow: 0px 3px 30px rgba(0, 0, 0, 1);
 		transform: rotate(100000deg);
 		transition: all 1000s linear;
+	}
+	.tim{
+		display: flex;
+		justify-content: space-between;
+	}
+	.tim span{
+		font-size: 15px;
+		color: #999;
 	}
 </style>

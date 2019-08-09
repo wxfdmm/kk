@@ -506,7 +506,8 @@ li:hover>.pbg{
 }
 .d_img img{
 	width:350px;
-	padding: 20px;
+	padding: 0 20px;
+	margin-bottom: 35px;
 }
 .d_img img+img{
 	padding-left: 35px;
