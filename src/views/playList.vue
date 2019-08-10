@@ -8,7 +8,7 @@
                         <h3>{{item.name}}</h3>
                         <ul v-show="item.show">
                            <li v-for="(lis,i) of item.list" :key="i">
-                               <router-link to="">
+                               <router-link to="/song">
                                    {{lis}}
                                </router-link>
                             </li>
@@ -27,11 +27,14 @@
 							
 							 <ul>
 								 <li v-for="(im,i) of iList" :key="i">
-									 <div>
-										 <div class="bg"></div>
-										 <img class="mg" :src=im.mg />
-										 <p>{{im.title}}</p>
-									 </div>
+									 <router-link to="/play1">
+										 <div>
+										 	<div class="bg"></div>
+										 	<img class="mg" :src=im.mg />
+											 <p>{{im.title}}</p>
+									 	</div>
+									 </router-link>
+									 
 								 </li>
 							 </ul>
 					 </div>

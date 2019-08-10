@@ -65,8 +65,8 @@
 			<div class="content_c">
 				<h1>歌单推荐</h1>
 				<div>
-					<router-link to="">为你推荐</router-link>
-					<router-link to="">90年代</router-link>
+					<router-link to="/song">为你推荐</router-link>
+					<router-link to="/playlist">90年代</router-link>
 					<router-link to="">民谣</router-link>
 					<router-link to="">日韩</router-link>
 					<router-link to="">情歌</router-link>
@@ -125,8 +125,11 @@
 					<ul class="bimg content_img">
 						<li>
 							<div class="pbg"></div>
-							<img src="../../public/img/index/mv1.jpg">
-							<p> SING女团 - 千盏</p>
+							<router-link to="/mv1">
+								<img src="../../public/img/index/mv1.jpg">
+								<p> SING女团 - 千盏</p>
+							</router-link>
+							
 						</li>
 						<li>
 							<div class="pbg"></div>

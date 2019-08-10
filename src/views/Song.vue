@@ -5,7 +5,7 @@
             <ul>
                 <li v-for="(item,index) of slist":key="index">
                     <img :src='item.smg'>
-                    <router-link to="">{{item.name}}</router-link>
+                    <router-link to="/playlist">{{item.name}}</router-link>
                 </li>
             </ul>
         </div>
@@ -25,7 +25,8 @@
                 </div>
                 <ul>
                     <li v-for='(item,i) of tlist':key="i">
-                        <div>
+                        <router-link to="/play">
+                            <div>
                             <input type="checkbox" v-model="checklist" :value='item.num'/>
                             <span>
                              {{item.num}} {{item.name}}
@@ -37,6 +38,7 @@
                             <div :title='item.name' class="bg3"></div>
                             <p>{{item.time}}</p>
                         </div>
+                        </router-link>
                     </li>
                 </ul>
             </div> 
@@ -213,7 +215,7 @@
 .body .inp{
     padding: 10px 10px;
 }
-.body li{
+.body li a{
     border-bottom: 1px dotted #ccc;
     display: flex;
     justify-content: space-between;
@@ -255,14 +257,14 @@
 .body li:hover .bg1,.body li:hover .bg2,.body li:hover .bg3{
     display: block;
 }
-.body li>.bg{
+.body li .bg{
     padding-top:8px;
     display: flex;
     font-size: 13px;
     color: #777;
     height: 13px;
 }
-.body li>.bg>div{
+.body li .bg>div{
     margin-right: 10px;
 }
 </style>

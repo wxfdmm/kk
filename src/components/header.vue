@@ -4,12 +4,12 @@
 			<div id="header" class="header">
 				<div class="logo">
 					<h1>新起点音乐</h1>
-					<a href="javaScript:;">新起点音乐</a>
+					<router-link to="javaScript:;">新起点音乐</router-link>
 				</div>
 				<ul class="first_nav">
-					<li class="active">发现音乐</li>
-					<li>我的音乐</li>
-					<li>朋友</li>
+					<li class="active"><router-link to="/">发现音乐</router-link></li>
+					<li><router-link to="/playList">我的音乐</router-link></li>
+					<li><router-link to="/play">朋友</router-link></li>
 					<li>商城</li>
 					<li>音乐人</li>
 					<li>下载客户端</li>
@@ -22,18 +22,18 @@
 			</div>
 			<div class="videoUp">
 				<div>
-					<a href="javascript:;">视频投稿</a>
+					<router-link to="javascript:;">视频投稿</router-link>
 				</div>
 			</div>
 			<div class="login">
-				<a href="#" data-action='login'>登录</a>
+				<router-link to="#" data-action='login'>登录</router-link>
 				<i class="arr"></i>
 				<ul>
-					<li><i class='mb_icon'></i><a 	href="javascript:;">手机号登录</a></li>
-					<li><i class="wx_icon"></i><a 	href="javascript:;">微信登录</a></li>
-					<li><i class="qq_icon"></i><a 	href="javascript:;">QQ登录</a></li>
-					<li><i class="wb_icon"></i><a 	href="javascript:;">新浪微博登录</a></li>
-					<li><i class="wy_icon"></i><a 	href="javascript:;">网易邮箱账号登录</a></li>
+					<li><i class='mb_icon'></i><router-link to="javascript:;">手机号登录</router-link></li>
+					<li><i class="wx_icon"></i><router-link to="javascript:;">微信登录</router-link></li>
+					<li><i class="qq_icon"></i><router-link to="javascript:;">QQ登录</router-link></li>
+					<li><i class="wb_icon"></i><router-link to="javascript:;">新浪微博登录</router-link></li>
+					<li><i class="wy_icon"></i><router-link to="javascript:;">网易邮箱账号登录</router-link></li>
 			    </ul>
 		        </div>
 	        </div>
@@ -41,11 +41,11 @@
         <div class="nav_bg">
 	        <div id="nav" class="nav">
 			<ul>
-				<li><router-link to="/" class="navActive">推荐</router-link to></li>
+				<li><router-link to="/" class="navActive">推荐</router-link></li>
 				<li><router-link to="/playList">歌单</router-link></li>
 				<li><router-link to="/song">排行榜</router-link></li>
-				<li><router-link to="#">MV</router-link></li>
-				<li><router-link to="#">歌手</router-link></li>
+				<li><router-link to="/mv">MV</router-link></li>
+				<li><router-link to="/play">歌手</router-link></li>
 				<li><router-link to="#">新碟上架</router-link></li>
 			</ul>
 	        </div>
