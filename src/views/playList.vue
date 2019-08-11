@@ -3,10 +3,10 @@
         <div class="pList">
            <div class="header">
                <h2>全部</h2>
-               <ul  :class="[{active:item.show}]" @click="changeli(index,item)" v-for="(item,index) of ulist" :key="index">
+               <ul  :class="[{active:item.sex}]"v-for="(item,index) of ulist" :key="index" @click="changeli(index,item)" >
                     <li>
                         <h3>{{item.name}}</h3>
-                        <ul v-show="item.show">
+                        <ul v-show="item.sex">
                            <li v-for="(lis,i) of item.list" :key="i">
                                <router-link to="/song">
                                    {{lis}}
@@ -30,7 +30,7 @@
 									 <router-link to="/play1">
 										 <div>
 										 	<div class="bg"></div>
-										 	<img class="mg" :src=im.mg />
+										 	<img class="mg" :src="'http://127.0.0.1:3000/img/'+im.mg"/>
 											 <p>{{im.title}}</p>
 									 	</div>
 									 </router-link>
@@ -47,7 +47,7 @@
             return {
 				time:'',
                 ulist:[
-                    {
+                   /* {
                         name: '语种',
                         list: ['华语 ', '欧美', '粤语 ', '日语', '韩语','纯音乐 ', ' 小语种'],
                         show: false
@@ -67,9 +67,10 @@
                         name: '主题',
                         list: ['经典', '翻唱', '榜单' ,'现场' ,'KTV' ,'DJ' ,'网络歌曲' ,'器乐'],
                         show: false
-                    }
-								],
-								iList:[{
+                    }*/
+				],
+				iList:[
+					/*{
 									mg:require('../../public/img/playList/g1.jpg'),title:'【经典老歌】我们听的是情怀'
 								},{
 									mg:require('../../public/img/playList/g2.jpg'),title:'我永远屈服于温柔，你是温柔本身'
@@ -111,26 +112,53 @@
 									mg:require('../../public/img/playList/g20.jpg'),title:'音乐启蒙，儿歌精选'
 								},{
 									mg:require('../../public/img/playList/g21.jpg'),title:'花的姿态|音乐诗人陈绮贞精选'
-								}
+								}*/
 							]
             }
 				},
 				methods: {
             changeli: function(ind, item) {
-                // 先循环数据中的show将其全部置为false,此时模板里的v-if判断生效关闭全部二级菜单,并移除样式
+                // 先循环数据中的sex将其全部置为false,此时模板里的v-if判断生效关闭全部二级菜单,并移除样式
                 this.ulist.forEach(i => {
-                    // 判断如果数据中的headerData[i]的show属性不等于当前数据的show属性那么headerData[i]等于false
-                    if (i.show !== this.ulist[ind].show) {
-                        i.show = false;
+                    // 判断如果数据中的ulist[i]的show属性不等于当前数据的sex属性那么ulist[i]等于false
+                    if (i.sex !== this.ulist[ind].sex) {
+                        i.sex = false;
                     };
                 });
                 // 取反(true或false)
-                item.show = !item.show;
-                console.log(item.name)
-            }
+                item.sex = !item.sex;
+                console.log(item.sex)
+			},
+			loadMore1(){
+				var	url='playIlist'
+				this.axios.get(url).then(result=>{
+					console.log(result)
+					this.iList=result.data
+				})
+			},
+			loadMore2(){
+				var	url='playUlist'
+				this.axios.get(url).then(result=>{
+					console.log(result)
+					this.ulist=result.data
+					for(var item of this.ulist){
+						console.log(item.list)
+						item.list=item.list.split(',')
+						if(item.sex==0){
+							item.sex=false
+						} else{
+							item.sex=true
+						}
+						
+					}
+					console.log(this.ulist)
+				})
+			}
 		},
 		created() {
-            this.time=new Date().toLocaleString()
+			this.time=new Date().toLocaleString();
+			this.loadMore1();
+			this.loadMore2();
         },
     
     }
