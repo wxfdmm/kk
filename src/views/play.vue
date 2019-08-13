@@ -1,68 +1,52 @@
 <template>
     <div class="father">
-        <div class="cbg">
-        </div>
-        <div class="con">
+           <div class="cbg">
+            </div><div class="con">
             <div>
-                <img src="../../public/img/index/content7.jpg" >
+                <img :src="'http://127.0.0.1:3000/img/'+list.mmg" >
                 <p class="p">下载这首歌</p>
             </div>
             <div class="txt">
-                    <h4>萧玉芬</h4> 
-                    <h3>幸福的勇气</h3>
+                    <h4>{{list.autor}}</h4> 
+                    <h3>{{list.title}}</h3>
                     
-                    <h5>︿☆幸福的勇气☆︿</h5>  
+                    <h5>︿☆{{list.title}}☆︿</h5>  
                     
-                    <h4>演唱：萧玉芬</h4> 
+                    <h4>演唱：{{list.autor}}</h4> 
                     
-                    <p>阮的心内藏着一个人</p>
-                    <p>只是一直不敢讲出来</p>
-                    <p>身边的朋友苦劝我</p>
-                    <p>不通继续憨憨等</p>
-                    <p>因为是我一人 底勒作暝梦</p>
-                    <p>有一天你出现底阮面前</p>
-                    <p>欢喜的心情 亲像春天的花蕊</p>
-                    <p>应该要把握这一切</p>
-                    <p>对你表明我的心意</p>
-                    <p>心中才袂有后悔这两字</p>
-                    <p>惦这个世界</p>
-                    <p>幸福的人需要很大的勇气</p>
-                    <p>想要讲的话 不愿搁藏心内</p>
-                    <p>看到你的笑容 那对迷人的眼神</p>
-                    <p>心中所有的爱 想要全部乎你</p>
-                    <p>惦这个世界</p>
-                    <p>幸福的人需要很大的勇气</p>
-                    <p>想要讲的话 不愿搁藏心底</p>
-                    <p>想要牵你的手 对你讲出我爱你</p>
-                    <p>希望甲你作伙 陪伴你到永远</p>
-                    <p>有一天你出现底阮面前</p>
-                    <p>欢喜的心情 亲像春天的花蕊</p>
-                    <p>应该要把握这一切</p>
-                    <p>对你表明我的心意</p>
-                    <p>心中才袂有后悔这两字</p>
-                    <p>惦这个世界</p>
-                    <p>幸福的人需要很大的勇气</p>
-                    <p>想要讲的话 不愿搁藏心内</p>
-                    <p>看到你的笑容 那对迷人的眼神</p>
-                    <p>心中所有的爱 想要全部乎你</p>
-                    <p>惦这个世界</p>
-                    <p>幸福的人需要很大的勇气</p>
-                    <p>想要讲的话 不愿搁藏心底</p>
-                    <p>想要牵你的手 对你讲出我爱你</p>
-                    <p>希望甲你作伙 陪伴你到永远</p>
-                    <p>希望甲你作伙 陪伴你到永远</p> 
+                    <p v-for='(item,i) of list.txt'>{{item}}</p>
+                    
             </div>
-        </div>
-        <div class="audio">
-            <audio controls>
-                <source src="../../public/img/song/bg.mp3" type="audio/mpeg">
-            </audio>
-        </div>
+            </div>
+            <div class="audio">
+                <audio controls>
+                    <source :src="'http://127.0.0.1:3000/img/'+bg.mp3" type="audio/mpeg">
+                </audio>
+            </div>
     </div>
 </template>
 <script>
-export default {
-    
+export default{
+    data(){
+        return {
+            list:{}
+        }
+    },
+    props:['lid'],
+    methods: {
+        loadMore5(){
+            var url='playMlist'
+            this.axios.get(url,{params:{lid:this.lid}}).then((result)=>{
+                console.log(result)
+                this.list=result.data[0]
+                this.list.txt=this.list.txt.split(',')
+                console.log(this.list)
+            })
+        }
+    },
+    created() {
+        this.loadMore5()
+    },
 }
 </script>
 <style scoped>

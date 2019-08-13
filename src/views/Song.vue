@@ -4,7 +4,7 @@
             <h3>热歌榜</h3>
             <ul>
                 <li v-for="(item,index) of slist":key="index">
-                    <img :src='item.smg'>
+                    <img :src="'http://127.0.0.1:3000/img/'+item.smg">
                     <router-link to="/playlist">{{item.name}}</router-link>
                 </li>
             </ul>
@@ -25,13 +25,12 @@
                 </div>
                 <ul>
                     <li v-for='(item,i) of tlist':key="i">
-                        <router-link to="/play">
-                            <div>
-                            <input type="checkbox" v-model="checklist" :value='item.num'/>
+                        <input type="checkbox" v-model="checklist" :value='item.num'/>
+                        <router-link :to="`/play/${i}`">
                             <span>
                              {{item.num}} {{item.name}}
                             </span>
-                        </div>
+                      
                         <div class="bg">
                             <div title="播放" class="bg1"></div>
                             <div title="下载" class="bg2"></div>
@@ -53,7 +52,7 @@
                 checked:false,
                 checklist:[],
                 time:'',
-                slist:[{
+                slist:[/*{
                 smg:require('../../public/img/song/1.jpg'),
                 name:'酷狗TOP500'},{
                 smg:require('../../public/img/song/2.jpg'),
@@ -103,9 +102,9 @@
                 smg:require('../../public/img/song/24.jpg'),
                 name:'欧美新歌榜'},{
                 smg:require('../../public/img/song/25.jpg'),
-                name:'韩国新歌榜'}
+                name:'韩国新歌榜'}*/
                 ],
-            tlist:[{
+                tlist:[/*{
                 num:1,name:'暴林、乔玲儿 - 爱情路上风雨多',time:'4.25'},{
                 num:2,name:'张怡诺 - 雨中泪',time:'4.11'},{
                 num:3,name:'任贤齐 - 英雄降临',time:'4.39'},{
@@ -126,7 +125,7 @@
                 num:18,name:'郑源、杨思琦 - 想你了',time:'5.25'},{
                 num:19,name:'张茜 - 青春里不知疲倦的向往',time:'4.05'},{
                 num:20,name:'董力 - 烈火',time:'4.13'},{
-                num:21,name:'吴是闳 - 不说穿',time:'5.25'},
+                num:21,name:'吴是闳 - 不说穿',time:'5.25'},*/
             ]
             }
         },
@@ -151,10 +150,28 @@
 　　　　　　            }
 　　　　　　        })
 　　　　        }
-            }
+            },
+            loadMore3(){
+                var url='playSlist'
+                this.axios.get(url).then((result)=>{
+                    console.log(result)
+                    this.slist=result.data
+                    console.log(this.slist)
+                })
+            },
+            loadMore4(){
+                var url='playTlist'
+                this.axios.get(url).then((result)=>{
+                    console.log(result)
+                    this.tlist=result.data
+                    console.log(this.tlist)
+                })
+            },
         },
         created() {
             this.time=new Date().toLocaleString();
+            this.loadMore3();
+            this.loadMore4()
         },
         
     }
@@ -198,11 +215,11 @@
     color: #666; 
 }
 .ftitle{
-    padding: 0 30px;
+    padding: 20px 30px ;
     border-right: 1px solid #aaa;
 }
 .ftitle li{
-    padding:5px 5px;
+    padding:8px 5px;
 }
 .ftitle a:hover{
     color: #4dbcf8;
@@ -215,6 +232,7 @@
 .body .inp{
     padding: 10px 10px;
 }
+.body li{padding:0 10px;}
 .body li a{
     border-bottom: 1px dotted #ccc;
     display: flex;
