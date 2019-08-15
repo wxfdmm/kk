@@ -44,8 +44,8 @@
 				<li><router-link to="/" class="navActive">推荐</router-link></li>
 				<li><router-link to="/playList">歌单</router-link></li>
 				<li><router-link to="/song">排行榜</router-link></li>
-				<li><router-link to="/mv">MV</router-link></li>
-				<li><router-link to="/play">歌手</router-link></li>
+				<li><router-link to="/mv/1">MV</router-link></li>
+				<li><router-link to="/play/1">歌手</router-link></li>
 				<li><router-link to="#">新碟上架</router-link></li>
 			</ul>
 	        </div>

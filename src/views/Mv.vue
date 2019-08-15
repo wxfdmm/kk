@@ -2,8 +2,8 @@
     <div class="vid">
         
         <div class="cv">
-            <p>吴克群 - 为你写诗</p>
-           <video src="../assets/吴克群 - 为你写诗.mp4" id="v3" ></video>
+            <p>{{list.uname}}</p>
+           <video :src="'http://127.0.0.1:3000/img/'+list.mv" id="v3" ></video>
             <div>
                 <button @click="vplay">播放</button>
                 <button @click="vpause">暂停</button>
@@ -12,35 +12,43 @@
             </div> 
         </div>
         <ul class="bimg content_img">
-                <li>
-                    <router-link to="/Mv1">
+                <li @click="loadMore8(1)">
+                    
                         <div class="pbg"></div>
+                        
                         <img src="../../public/img/index/mv1.jpg">
                         <p> SING女团 - 千盏</p>
-                    </router-link>
+                    
                     
                 </li>
                 <li>
+                    
                     <div class="pbg"></div>
+                    
                     <img src="../../public/img/index/mv2.jpg">
                     <p>画词戏子 - 把孤独当作晚餐</p>
+                   
                 </li>
                 <li>
+                    
                     <div class="pbg"></div>
                     <img src="../../public/img/index/mv3.jpg">
                     <p>GAI、大痒痒 - 哪吒</p>
                 </li>
                 <li>
-                    <div class="pbg"></div>
+                   
+                    <div class="pbg"></div> 
                     <img src="../../public/img/index/mv4.jpg">
                     <p>陈雪燃 - 无名之辈</p>
                 </li>
                 <li>
+                    
                     <div class="pbg"></div>
                     <img src="../../public/img/index/mv5.jpg">
                     <p>井胧 - 把孤独当作晚餐</p>
                 </li>
                 <li>
+                    
                     <div class="pbg"></div>
                     <img src="../../public/img/index/mv6.jpg">
                     <p>肖战、王一博 - 无羁</p>
@@ -52,14 +60,25 @@
 export default {
     data() {
         return {
-            
+            list:{}
         }
     },
+    props:['lid'],
     methods: {
         vplay(){v3.play()},
         vpause(){v3.pause()},
         vplay2(){v3.playbackRate=3;v3.play();},
-        vplay3(){v3.playbackRate=0.5;v3.play();}
+        vplay3(){v3.playbackRate=0.5;v3.play();},
+        loadMore7(){
+            var url='playVlist'
+            this.axios.get(url,{params:{lid:this.lid}}).then((res)=>{
+                console.log(res)
+                this.list=res.data[0]
+            })
+        }
+    },
+    created() {
+        this.loadMore7()
     },
 }
 </script>

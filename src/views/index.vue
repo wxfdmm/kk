@@ -125,7 +125,7 @@
 					<ul class="bimg content_img">
 						<li>
 							<div class="pbg"></div>
-							<router-link to="/mv1">
+							<router-link to="/mv/0">
 								<img src="../../public/img/index/mv1.jpg">
 								<p> SING女团 - 千盏</p>
 							</router-link>
@@ -133,28 +133,38 @@
 						</li>
 						<li>
 							<div class="pbg"></div>
+							<router-link to="/mv/1">
 							<img src="../../public/img/index/mv2.jpg">
 							<p>画词戏子 - 把孤独当作晚餐</p>
+							</router-link>
 						</li>
 						<li>
 							<div class="pbg"></div>
+							<router-link to="/mv/2">
 							<img src="../../public/img/index/mv3.jpg">
 							<p>GAI、大痒痒 - 哪吒</p>
+							</router-link>
 						</li>
 						<li>
 							<div class="pbg"></div>
+							<router-link to="/mv/3">
 							<img src="../../public/img/index/mv4.jpg">
 							<p>陈雪燃 - 无名之辈</p>
+							</router-link>
 						</li>
 						<li>
 							<div class="pbg"></div>
+							<router-link to="/mv/4">
 							<img src="../../public/img/index/mv5.jpg">
 							<p>井胧 - 把孤独当作晚餐</p>
+							</router-link>
 						</li>
 						<li>
 							<div class="pbg"></div>
+							<router-link to="/mv/5">
 							<img src="../../public/img/index/mv6.jpg">
 							<p>肖战、王一博 - 无羁</p>
+						</router-link>
 						</li>
 					</ul>
 				</div>

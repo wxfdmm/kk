@@ -1,6 +1,6 @@
 <template>
     <div class="father">
-           <div class="cbg">
+           <div class="cbg" :style="{ backgroundImage: 'url('+'http://127.0.0.1:3000/img/'+list.mmg +')'}">
             </div><div class="con">
             <div>
                 <img :src="'http://127.0.0.1:3000/img/'+list.mmg" >
@@ -19,9 +19,7 @@
             </div>
             </div>
             <div class="audio">
-                <audio controls>
-                    <source :src="'http://127.0.0.1:3000/img/'+bg.mp3" type="audio/mpeg">
-                </audio>
+							<audio :src="'http://127.0.0.1:3000/img/'+list.song"  controls></audio>
             </div>
     </div>
 </template>
@@ -42,10 +40,10 @@ export default{
                 this.list.txt=this.list.txt.split(',')
                 console.log(this.list)
             })
-        }
+				}
     },
     created() {
-        this.loadMore5()
+				this.loadMore5()
     },
 }
 </script>
@@ -59,7 +57,7 @@ export default{
         width: 600px;
         height: 600px;
         margin: 0 auto;
-        background-image: url('../../public/img/index/content7.jpg');
+        background-image: url( );
         filter: blur(100px);
     }
     .con img{

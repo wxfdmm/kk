@@ -27,7 +27,7 @@
 							
 							 <ul>
 								 <li v-for="(im,i) of iList" :key="i">
-									 <router-link to="/play1">
+									 <router-link :to="`/play/${i}`">
 										 <div>
 										 	<div class="bg"></div>
 										 	<img class="mg" :src="'http://127.0.0.1:3000/img/'+im.mg"/>

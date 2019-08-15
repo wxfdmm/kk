@@ -20,6 +20,6 @@ export default new Router({
         { path:"/song", component: song },
   //   ]},
      { path: '/play/:lid', component: play,props:true },
-     { path: '/mv', component:mv }
+     { path: '/mv/:lid', component:mv,props:true }
    ]
 })
